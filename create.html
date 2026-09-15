@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Listing</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="formTitle">Create Listing</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="create.html" class="member-only">Create Listing</a>
+            <a href="dashboard.html" class="member-only">My Listings</a>
+            <a href="dashboard.html" class="moderator-only">Moderator Dashboard</a>
+
+            <label for="roleSelect">Role:</label>
+
+            <select id="roleSelect">
+                <option value="visitor">Visitor</option>
+                <option value="member">Member</option>
+                <option value="moderator">Moderator</option>
+            </select>
+        </nav>
+    </header>
+
+    <main>
+
+        <form id="listingForm" novalidate>
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" maxlength="80">
+                <small id="titleError" class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" rows="5" maxlength="500"></textarea>
+                <small id="descriptionError" class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price (€)</label>
+                <input type="number" id="price" min="0" step="0.01">
+                <small id="priceError" class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="">Select Category</option>
+                    <option value="Books">Books</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Bikes">Bikes</option>
+                </select>
+                <small id="categoryError" class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="type">Listing Type</label>
+                <select id="type">
+                    <option value="">Select Type</option>
+                    <option value="Sell">Sell</option>
+                    <option value="Buy">Buy</option>
+                    <option value="Exchange">Exchange</option>
+                </select>
+                <small id="typeError" class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="condition">Condition</label>
+                <select id="condition">
+                    <option value="">Select Condition</option>
+                    <option value="New">New</option>
+                    <option value="Used">Used</option>
+                </select>
+                <small id="conditionError" class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" maxlength="60">
+                <small id="locationError" class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="sellerName">Seller Name</label>
+                <input type="text" id="sellerName" maxlength="60">
+                <small id="sellerNameError" class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="image">Image URL</label>
+                <input type="url" id="image" placeholder="https://example.com/image.jpg">
+                <small id="imageError" class="error-message"></small>
+            </div>
+
+            <button type="submit" id="submitButton">Create Listing</button>
+
+            <p id="formSuccessMessage" hidden></p>
+
+            <a href="index.html">Back to Listings</a>
+
+        </form>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="js/data.js"></script>
+    <script src="js/roles.js"></script>
+    <script src="js/create.js"></script>
+
+</body>
+
+</html>

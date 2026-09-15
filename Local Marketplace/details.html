@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing Details</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Local Marketplace</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="create.html" class="member-only">Create Listing</a>
+            <a href="dashboard.html" class="member-only">My Listings</a>
+            <a href="dashboard.html" class="moderator-only">Moderator Dashboard</a>
+
+            <label for="roleSelect">Role:</label>
+
+            <select id="roleSelect">
+                <option value="visitor">Visitor</option>
+                <option value="member">Member</option>
+                <option value="moderator">Moderator</option>
+            </select>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="listingDetails">
+
+        </section>
+
+        <section id="contactSection">
+
+            <h2>Contact Seller</h2>
+
+            <form id="contactForm" novalidate>
+
+                <div class="form-group">
+                    <label for="buyerName">Your Name</label>
+                    <input type="text" id="buyerName">
+                    <small id="buyerNameError" class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="buyerEmail">Your Email</label>
+                    <input type="email" id="buyerEmail">
+                    <small id="buyerEmailError" class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5"></textarea>
+                    <small id="messageError" class="error-message"></small>
+                </div>
+
+                <button type="submit">Send Inquiry</button>
+
+                <p id="contactSuccess" hidden></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="js/data.js"></script>
+    <script src="js/roles.js"></script>
+    <script src="js/details.js"></script>
+
+</body>
+
+</html>

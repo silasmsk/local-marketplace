@@ -1,0 +1,477 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #e2d8cb;
+    --wine: #56061d;
+    --blue: #507593;
+    --navy: #022e4a;
+    --background: #f8f5f1;
+    --white: #ffffff;
+    --text: #1f2933;
+    --border: #e2d8cb;
+    --success: #2f6f4e;
+}
+
+/* General */
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+main {
+    width: 92%;
+    max-width: 1200px;
+    margin: 32px auto;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--navy);
+}
+
+p {
+    line-height: 1.5;
+}
+
+a {
+    color: var(--blue);
+}
+
+/* Header and navigation */
+
+header {
+    padding: 24px 5%;
+    background-color: var(--wine);
+    color: var(--white);
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(2, 46, 74, 0.16);
+}
+
+header h1 {
+    margin-bottom: 18px;
+    color: var(--white);
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--cream);
+}
+
+nav label {
+    color: var(--white);
+    font-weight: 600;
+}
+
+#roleSelect {
+    padding: 8px 12px;
+    border: 1px solid var(--cream);
+    border-radius: 7px;
+    background-color: var(--white);
+    color: var(--navy);
+    font: inherit;
+}
+
+/* Hero */
+
+#hero {
+    margin-bottom: 28px;
+    padding: 34px 20px;
+    text-align: center;
+    background-color: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+#hero h2 {
+    margin-bottom: 8px;
+    color: var(--wine);
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+#hero p {
+    color: #4d5660;
+}
+
+#hero::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    margin: 18px auto 0;
+    background-color: var(--wine);
+    border-radius: 50px;
+}
+
+/* Filters */
+
+#filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 22px;
+    background-color: #f7f2ec;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(2, 46, 74, 0.06);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.filter-group label,
+.form-group label {
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.filter-group input,
+.filter-group select,
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #c9c1b7;
+    border-radius: 8px;
+    background-color: var(--white);
+    font: inherit;
+}
+
+.filter-group input:focus,
+.filter-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: 2px solid var(--blue);
+    outline-offset: 1px;
+}
+
+/* Listings and cards */
+
+#listings > h2 {
+    margin-bottom: 24px;
+    color: var(--navy);
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+#listingContainer,
+#dashboardListings,
+#favoriteListings,
+#receivedInquiries {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+#listingContainer article,
+.listing-card,
+.inquiry-card,
+.listing-detail-card {
+    padding: 20px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 5px 16px rgba(2, 46, 74, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#listingContainer article {
+    border-top: 5px solid var(--wine);
+}
+
+#listingContainer article:hover,
+.listing-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(2, 46, 74, 0.12);
+}
+
+#listingContainer article img,
+.listing-detail-card img {
+    width: 100%;
+    max-height: 240px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#listingContainer h3 {
+    color: var(--wine);
+    font-size: 1.3rem;
+}
+
+#listingContainer h3,
+.listing-card h3,
+.inquiry-card h3,
+.listing-detail-card h2 {
+    margin-bottom: 12px;
+}
+
+#listingContainer p,
+.listing-card p,
+.inquiry-card p,
+.listing-detail-card p {
+    margin-bottom: 8px;
+}
+
+/* Buttons */
+
+button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+}
+
+.details-button,
+#submitButton,
+#listingForm button[type="submit"],
+#contactForm button[type="submit"],
+.edit-button {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.details-button:hover,
+#submitButton:hover,
+#listingForm button[type="submit"]:hover,
+#contactForm button[type="submit"]:hover,
+.edit-button:hover {
+    background-color: var(--navy);
+}
+
+.favorite-button {
+    margin-right: 7px;
+    background-color: var(--cream);
+    color: var(--wine);
+    border: 1px solid var(--wine);
+}
+
+.favorite-button:hover {
+    background-color: var(--wine);
+    color: var(--white);
+}
+
+.edit-button {
+    margin-right: 7px;
+}
+
+.delete-button,
+.remove-button,
+#reportButton {
+    background-color: var(--wine);
+    color: var(--white);
+}
+
+.delete-button:hover,
+.remove-button:hover,
+#reportButton:hover {
+    opacity: 0.85;
+}
+
+.dismiss-report-button,
+.dismiss-inquiry-button,
+.remove-favorite-button {
+    background-color: var(--cream);
+    color: var(--navy);
+}
+
+.dismiss-report-button:hover,
+.dismiss-inquiry-button:hover,
+.remove-favorite-button:hover {
+    background-color: #d5c7b7;
+}
+
+/* Forms */
+
+#listingForm,
+#contactForm {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 26px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 5px 16px rgba(2, 46, 74, 0.08);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.error-message {
+    display: block;
+    min-height: 18px;
+    margin-top: 5px;
+    color: var(--wine);
+    font-size: 0.9rem;
+}
+
+#listingForm button[type="submit"] {
+    width: 100%;
+}
+
+#formSuccessMessage,
+#contactSuccess {
+    margin-top: 14px;
+    color: var(--success);
+    font-weight: 600;
+}
+
+#listingForm > a {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--blue);
+    text-decoration: none;
+}
+
+#listingForm > a:hover {
+    color: var(--navy);
+    text-decoration: underline;
+}
+
+/* Details */
+
+#listingDetails {
+    margin-bottom: 32px;
+}
+
+.listing-detail-card {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.listing-detail-card a {
+    display: inline-block;
+    margin-top: 16px;
+    margin-left: 10px;
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.listing-detail-card a:hover {
+    color: var(--navy);
+    text-decoration: underline;
+}
+
+#contactSection {
+    margin-top: 34px;
+}
+
+#contactSection > h2 {
+    max-width: 700px;
+    margin: 0 auto 16px;
+}
+
+/* Dashboard */
+
+#favoritesSection,
+#inquiriesSection {
+    margin-top: 42px;
+}
+
+#favoritesSection > h2,
+#inquiriesSection > h2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--cream);
+}
+
+/* Footer */
+
+footer {
+    margin-top: 48px;
+    padding: 22px;
+    background-color: var(--wine);
+    color: var(--white);
+    text-align: center;
+}
+
+/* Tablet */
+
+@media (min-width: 700px) {
+    nav {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #filters {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #listingContainer,
+    #dashboardListings,
+    #favoriteListings {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1000px) {
+    header {
+        padding: 26px 5%;
+    }
+
+    #filters {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    #listingContainer,
+    #dashboardListings,
+    #favoriteListings {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
